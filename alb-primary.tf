@@ -133,7 +133,7 @@ module "alb_load" {
     ex-ip = {
       name_prefix               = "l1-"
       target_type               = "ip"
-      protocol                  = "HTTPS"
+      protocol                  = "HTTP"
       port                      = 8089
       create_attachment = false
       health_check = {
@@ -143,8 +143,8 @@ module "alb_load" {
         healthy_threshold   = 3
         unhealthy_threshold = 5
         timeout             = 30
-        protocol            = "HTTPS"
-        matcher             = "403"
+        protocol            = "HTTP"
+        matcher             = "200"
       }
     }
   }
