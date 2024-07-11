@@ -1,0 +1,21 @@
+{
+    "Action": "Add",
+    "Attribute": "RevenueCode",
+    "ExtSiteID": "CA",
+    "Data": {
+    "gc_revenue_code_id": 2,
+    "source_id": 12,
+    "RevenueCodeID":"13bc29b3-e2da-4007-95db-106423967dd0",
+    "ExtRevenueCodeID":"MARQRT@",
+    "RevenueCodeName": "MARQUEL ROUTER TEST 2",
+    "Priority":1,
+    "DrawDownAmount":0,
+    "RCValue1":null,
+    "RCValue2":null,
+    "RCValue3":null,
+    "RCValue4":null,
+    "PropData": null,
+    "IsCalcDrawDown":false
+}
+}
+
