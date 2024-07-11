@@ -1,7 +1,5 @@
 FROM locustio/locust
 
-WORKDIR /mnt/locust
+COPY locustfile.py /mnt/locust/
 
-COPY locustfile.py /mnt/locust
-
-CMD [ "locust" ]
+ENTRYPOINT [ "locust", "-f", "/mnt/locust/locustfile.py" ]
