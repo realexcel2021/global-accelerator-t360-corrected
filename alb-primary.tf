@@ -134,12 +134,12 @@ module "alb_load" {
       name_prefix               = "l1-"
       target_type               = "ip"
       protocol                  = "HTTPS"
-      port                      = 8090
+      port                      = 8089
       create_attachment = false
       health_check = {
         enabled             = true
         interval            = 35
-        port                = 8090
+        port                = 8089
         healthy_threshold   = 3
         unhealthy_threshold = 5
         timeout             = 30

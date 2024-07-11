@@ -89,7 +89,7 @@ module "ecs_service" {
     service = {
       target_group_arn = module.alb_load.target_groups["ex-ip"].arn
       container_name   = "load_testing"
-      container_port   = 8090
+      container_port   = 8089
     }
   }
 
@@ -100,18 +100,18 @@ module "ecs_service" {
 
 
   security_group_rules = {
-    alb_ingress_8090 = {
+    alb_ingress_8089 = {
       type                     = "ingress"
-      from_port                = 8090
-      to_port                  = 8090
+      from_port                = 8089
+      to_port                  = 8089
       protocol                 = "tcp"
       description              = "Service port"
       cidr_blocks              = ["0.0.0.0/0"]
     }
-    alb_ingress_8090_sg = {
+    alb_ingress_8089_sg = {
       type                     = "ingress"
-      from_port                = 8090
-      to_port                  = 8090
+      from_port                = 8089
+      to_port                  = 8089
       protocol                 = "tcp"
       description              = "Service port"
       source_security_group_id = "${module.alb.security_group_id}"
@@ -137,7 +137,7 @@ module "ecs_service" {
       port_mappings = [
         {
           name          = "app-port"
-          containerPort = 8090
+          containerPort = 8089
           protocol      = "tcp"
         }
       ]
