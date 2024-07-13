@@ -7,5 +7,5 @@ output "alb_region2" {
 }
 
 output "load_testing_ui" {
-  value = module.alb.dns_name
+  value = module.alb_load.dns_name
 }
