@@ -20,6 +20,7 @@ module "lambda_secondary" { # loadbalancer guy here!
   publish       = true
   store_on_s3   = false
   memory_size   = 128
+    provisioned_concurrent_executions = 1000
 
   source_path = "${path.module}/src/demo/"
 
@@ -59,6 +60,7 @@ module "CreateRemittanceTableLambdaFunction_secondary" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+    provisioned_concurrent_executions = 1000
 
   source_path = "${path.module}/src/Api/"
 
@@ -123,7 +125,7 @@ module "GetRemittancesLambdaFunction_secondary" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
-
+  provisioned_concurrent_executions = 1000
   source_path = "${path.module}/src/Api/"
 
   vpc_subnet_ids = module.vpc_secondary.private_subnets
@@ -178,7 +180,7 @@ module "CreateRemittanceLambdaFunction_secondary" {
     aws = aws.region2
   }
 
-
+  provisioned_concurrent_executions = 1000
   function_name = "tf-CreateRemittance-secondary"
   handler       = "api.create_remittance"
   runtime       = "python3.8"

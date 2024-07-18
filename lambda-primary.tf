@@ -17,6 +17,7 @@ module "lambda_primary" { # loadbalancer guy here!
   timeout       = 60
   tracing_mode  = "PassThrough"
   publish       = true
+  provisioned_concurrent_executions = 3000
   store_on_s3   = false
   memory_size   = 128
 
@@ -51,6 +52,7 @@ module "CreateRemittanceTableLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -112,6 +114,7 @@ module "DropRemittanceTableLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -173,6 +176,7 @@ module "GetRemittancesLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -234,6 +238,7 @@ module "CreateRemittanceLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -295,6 +300,7 @@ module "UpdateRemittanceLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -355,6 +361,7 @@ module "DeleteRemittanceLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 
@@ -416,6 +423,7 @@ module "ClearRemittancesLambdaFunction" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+    provisioned_concurrent_executions = 3000
 
   source_path = "${path.module}/src/Api/"
 

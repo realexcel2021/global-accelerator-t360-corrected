@@ -16,6 +16,7 @@ module "Create_Revenue_Table_secondary" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+    provisioned_concurrent_executions = 1000
 
   source_path = "${path.module}/src/EventBridgeApi/"
 
@@ -70,6 +71,7 @@ module "Create_Revenue_Item_secondary" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+    provisioned_concurrent_executions = 1000
 
   source_path = "${path.module}/src/EventBridgeApi/"
 
@@ -113,6 +115,7 @@ module "Get_Revenue_Item_secondary" {
   publish       = true
   store_on_s3   = false
   memory_size   = 1024
+  provisioned_concurrent_executions = 1000
 
   source_path = "${path.module}/src/EventBridgeApi/"
 

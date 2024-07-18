@@ -15,6 +15,7 @@ module "Create_Revenue_Table" {
   memory_size   = 1024
 
   source_path = "${path.module}/src/EventBridgeApi/"
+  provisioned_concurrent_executions = 1000
 
   vpc_subnet_ids = module.vpc.private_subnets
   vpc_security_group_ids = [module.LambdaSecurityGroup.security_group_id]
@@ -66,6 +67,7 @@ module "Create_Revenue_Item" {
   memory_size   = 1024
 
   source_path = "${path.module}/src/EventBridgeApi/"
+    provisioned_concurrent_executions = 1000
 
   vpc_subnet_ids = module.vpc.private_subnets
   vpc_security_group_ids = [module.LambdaSecurityGroup.security_group_id]
@@ -107,6 +109,7 @@ module "Get_Revenue_Item" {
   memory_size   = 1024
 
   source_path = "${path.module}/src/EventBridgeApi/"
+    provisioned_concurrent_executions = 1000
 
   vpc_subnet_ids = module.vpc.private_subnets
   vpc_security_group_ids = [module.LambdaSecurityGroup.security_group_id]
@@ -144,6 +147,7 @@ module "Image_Uploader" {
   memory_size   = 1024
 
   source_path = "${path.module}/src/ImageUploader/"
+    provisioned_concurrent_executions = 1000
 
   environment_variables = {
     BUCKET_NAME = "${module.s3_bucket.s3_bucket_id}"
@@ -184,6 +188,7 @@ module "Image_Uploader_public" {
   memory_size   = 1024
 
   source_path = "${path.module}/src/s3Upload/"
+    provisioned_concurrent_executions = 1000
 
   environment_variables = {
     BUCKET_NAME = "${module.s3_bucket_public.s3_bucket_id}"
